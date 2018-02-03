@@ -2,7 +2,7 @@
   "name": "nodejs-api-hack",
   "version": "1.0.0",
   "description": "A scaffolding nodejs app with TypeScript, tslint and eslint Edit",
-  "main": "index.js",
+  "main": "./build/index.js",
   "scripts": {
     "watch": "NODE_PATH=build ./node_modules/.bin/gulp serve",
     "tslint": "tslint -c tslint.json -p tsconfig.json --format verbose",
