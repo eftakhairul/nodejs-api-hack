@@ -1,0 +1,21 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules",
+    "*.swo"
+  ],
+  "verbose": true,
+  "execMap": {
+    "js": "node_modules/.bin/babel-node --presets=es2015"
+  },
+  "watch": [
+    "src/",    
+    "config/",    
+    "package.json"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js json"
+}
