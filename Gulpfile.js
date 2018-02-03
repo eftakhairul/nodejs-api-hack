@@ -30,7 +30,7 @@ gulp.task("buildSpec", ["copySpec", "typescriptSpec"]);
 
 gulp.task('serve', ['build'], function () {
   nodemon({
-    script: 'dist/',
+    script: 'build/',
     exec: 'node --inspect',
 	watch: watches,
     tasks: ['build'],

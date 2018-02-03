@@ -4,6 +4,8 @@
   "description": "A scaffolding nodejs app with TypeScript, tslint and eslint Edit",
   "main": "index.js",
   "scripts": {
+    "watch": "NODE_PATH=build ./node_modules/.bin/gulp serve",
+    "tslint": "tslint -c tslint.json -p tsconfig.json --format verbose",
     "build": "NODE_ENV=production gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
