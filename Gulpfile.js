@@ -4,7 +4,7 @@ const shell = require('gulp-shell');
 
 const srcdirs = ['src/', 'config/'];
 const watches = ['./src/index.ts'].concat(srcdirs);
-const sources = ['./src/index.ts'].concat(srcdirs.map(f => `${f}**/*.js`), srcdirs.map(f => `${f}**/*.ts`));
+// const sources = ['./src/index.ts'].concat(srcdirs.map(f => `${f}**/*.js`), srcdirs.map(f => `${f}**/*.ts`));
 
 
 gulp.task('typescript', function () {
@@ -16,7 +16,7 @@ gulp.task('typescriptSpec', () => {
 })
 
 gulp.task("copy", function () {
-	return gulp.src([ "lib/**/*.json", "../config/**/*.json", "config/conf/*.js"], { base: './src' })
+	return gulp.src([ "lib/**/*.json", "../config/**/*.json", "../config/conf/*.js"], { base: './src' })
              .pipe(gulp.dest("build"));
 });
 
@@ -32,7 +32,7 @@ gulp.task('serve', ['build'], function () {
   nodemon({
     script: 'build/',
     exec: 'node --inspect',
-	watch: watches,
+	  watch: watches,
     tasks: ['build'],
     ext: 'js,ts,json',
     env: {

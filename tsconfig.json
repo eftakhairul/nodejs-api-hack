@@ -29,7 +29,7 @@
         "types"
     ],
   },
-  "include": [
+  "files": [
       "src/index.ts"
   ]
 }
