@@ -2,13 +2,13 @@ const gulp = require("gulp");
 const nodemon = require('gulp-nodemon');
 const shell = require('gulp-shell');
 
-const srcdirs = ['endpoints/', 'config/', 'lib/'];
-const watches = ['index.ts'].concat(srcdirs);
-const sources = ['index.ts'].concat(srcdirs.map(f => `${f}**/*.js`), srcdirs.map(f => `${f}**/*.ts`));
+const srcdirs = ['src/', 'config/'];
+const watches = ['./src/index.ts'].concat(srcdirs);
+const sources = ['./src/index.ts'].concat(srcdirs.map(f => `${f}**/*.js`), srcdirs.map(f => `${f}**/*.ts`));
 
 
 gulp.task('typescript', function () {
-  return gulp.src('index.ts').pipe(shell('tsc -p tsconfig.json'));
+  return gulp.src('./src/index.ts').pipe(shell('tsc -p tsconfig.json'));
 });
 
 gulp.task('typescriptSpec', () => {
@@ -16,8 +16,8 @@ gulp.task('typescriptSpec', () => {
 })
 
 gulp.task("copy", function () {
-	return gulp.src([ "lib/**/*.json", "config/**/*.json", "config/conf/*.js"], { base: '.' })
-               .pipe(gulp.dest("dist"));
+	return gulp.src([ "lib/**/*.json", "../config/**/*.json", "config/conf/*.js"], { base: './src' })
+             .pipe(gulp.dest("build"));
 });
 
 gulp.task("copySpec", function () {

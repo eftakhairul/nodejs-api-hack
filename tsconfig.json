@@ -1,0 +1,35 @@
+
+{
+  "compilerOptions": {
+      "module": "commonjs",
+      "target": "es2017",
+      "experimentalDecorators": true,
+      "noImplicitAny": true,
+      "moduleResolution": "node",
+      "lib": ["dom", "es7", "es2015", "es2017"],
+      "inlineSourceMap": true,
+      "alwaysStrict": true,
+      "noEmitOnError": true,
+      "noFallthroughCasesInSwitch": true,
+      "noImplicitReturns": true,
+      "noUnusedLocals": true,
+      "strictNullChecks": true,   
+      "noUnusedParameters": true,    
+      "outDir": "./build",
+      "baseUrl": "./src",
+      "paths": {
+          "*": [
+              "../node_modules/*",
+              "../config/*",
+              "types/*"
+          ]
+      },
+      "typeRoots": [
+        "../node_modules/@types",
+        "types"
+    ],
+  },
+  "include": [
+      "src/index.ts"
+  ]
+}
