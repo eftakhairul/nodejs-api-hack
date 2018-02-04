@@ -10,15 +10,6 @@ const router = express.Router({
   mergeParams: true,
 });
 
-const env = App.get('env') ;
-const port: number = parseInt(process.env.NODE_PORT, 10) || 3000;
-
-if (['development', 'test', 'staging'].indexOf(env) !== -1) {
-  App.set('json spaces', 2);
-} else {
-  App.set('json spaces', 0);
-}
-
 router.use('/sys/health', (request: core.Request, response: core.Response) => {
   response.status(200);
   response.set('Content-Type', 'application/json');
@@ -28,6 +19,7 @@ router.use('/sys/health', (request: core.Request, response: core.Response) => {
 
 App.use(router);
 
+const port: number = parseInt(process.env.NODE_PORT as string, 10) || 3000;
 App.listen(port, () => {  
   process.stdout.write(`API server Up and Running on port ${port} \n`);
 });
