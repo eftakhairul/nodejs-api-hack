@@ -13,8 +13,7 @@
       "noFallthroughCasesInSwitch": true,
       "noImplicitReturns": true,
       "noUnusedLocals": true,
-      "strictNullChecks": true,   
-      "noUnusedParameters": true,    
+      "strictNullChecks": true,         
       "outDir": "./build",
       "baseUrl": "./src",
       "paths": {
