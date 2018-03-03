@@ -1,5 +1,7 @@
-import { App, core } from "./lib/core/App";
 import * as express from 'express';
+import {Express, Request, Response} from "express";
+import { App } from "./lib/core/App";
+
 
 // declare function require(name: string);
 // tslint:disable-next-line:no-var-requires
@@ -10,10 +12,10 @@ const router = express.Router({
   mergeParams: true,
 });
 
-router.use('/sys/health', (request: core.Request, response: core.Response) => {
+router.use('/sys/health', (request: Request, response: Response) => {
   response.status(200);
   response.set('Content-Type', 'application/json');
-  response.send('{ "ok": true }');
+  response.send({ "ok": true });
 });
 
 
