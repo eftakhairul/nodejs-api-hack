@@ -1,13 +1,14 @@
 import * as express from 'express';
-import * as core from 'Express';
+import {Express, Request, Response} from "express";
 import * as bodyParser from 'body-parser';
 import * as helmet from 'helmet';
 
-const app = express();
+const app: Express = express();
 
+// Decode payload as json with body-parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(core());
+
 app.use(helmet({
   frameguard: false,
 }));
@@ -23,5 +24,4 @@ if (['development', 'test', 'staging'].indexOf(env) !== -1) {
 // Trust the first proxy which should be an AWS ELB
 app.set('trust proxy', true);
 
-export const App: core.Express = app;
-export { core };
+export const App: Express = app;
