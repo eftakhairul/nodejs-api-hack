@@ -1,6 +1,6 @@
 import * as express from 'express';
 import {Request, Response} from "express";
-import { App } from "./lib/core/App";
+import { App } from "lib/core/App";
 
 
 // declare function require(name: string);

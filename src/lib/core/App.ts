@@ -3,6 +3,7 @@ import { Express } from "express";
 import * as bodyParser from 'body-parser';
 import * as helmet from 'helmet';
 import * as cors from 'cors';
+import  { db } from 'lib/models/index';
 
 const app: Express = express();
 
@@ -27,5 +28,8 @@ app.set('trust proxy', true);
 
 //Set cors
 app.use(cors());
+
+//Set DB 
+app.set('db', db);
 
 export const App: Express = app;

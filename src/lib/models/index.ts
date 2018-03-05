@@ -1,4 +1,4 @@
-import {sequelize} from './lib/core/sequelize';
+import {sequelize} from 'lib/core/sequelize';
 
 
 // All of the models
