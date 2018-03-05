@@ -1,9 +1,9 @@
-import {sequelize} from 'lib/core/sequelize';
+import {sequelize} from './lib/core/sequelize';
 
 
 // All of the models
-import user, { UserModel } from 'lib/models/user';
-import profile, { ProfileModel } from 'lib/models/profile';
+import user, { UserModel } from './user';
+import profile, { ProfileModel } from './profile';
 
 export interface Database {
 
