@@ -1,7 +1,8 @@
 import * as express from 'express';
-import {Express, Request, Response} from "express";
+import { Express } from "express";
 import * as bodyParser from 'body-parser';
 import * as helmet from 'helmet';
+import * as cors from 'cors';
 
 const app: Express = express();
 
@@ -23,5 +24,8 @@ if (['development', 'test', 'staging'].indexOf(env) !== -1) {
 
 // Trust the first proxy which should be an AWS ELB
 app.set('trust proxy', true);
+
+//Set cors
+app.use(cors());
 
 export const App: Express = app;

@@ -1,5 +1,5 @@
 import * as express from 'express';
-import {Express, Request, Response} from "express";
+import {Request, Response} from "express";
 import { App } from "./lib/core/App";
 
 
