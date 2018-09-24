@@ -1,6 +1,7 @@
-const gulp = require("gulp");
+const gulp    = require("gulp");
 const nodemon = require('gulp-nodemon');
-const shell = require('gulp-shell');
+const shell   = require('gulp-shell');
+const series  = gulp.series;
 
 const srcdirs = ['src/', 'config/'];
 const watches = ['./src/index.ts'].concat(srcdirs);
@@ -22,13 +23,13 @@ gulp.task("copy", function () {
 
 gulp.task("copySpec", function () {
 	return gulp.src([ "lib/**/*.json", "config/**/*.json", "config/conf/*.js"], { base: '.' })
-               .pipe(gulp.dest("distSpec"));
+             .pipe(gulp.dest("distSpec"));
 });
 
-gulp.task("build", ["copy", "typescript"]);
-gulp.task("buildSpec", ["copySpec", "typescriptSpec"]);
+gulp.task("build", series(["copy", "typescript"]));
+gulp.task("buildSpec", series(["copySpec", "typescriptSpec"]));
 
-gulp.task('serve', ['build'], function () {
+gulp.task('serve', series(['build']), function () {
   nodemon({
     script: 'build/',
     exec: 'node --inspect',
