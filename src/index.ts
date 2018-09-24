@@ -1,11 +1,9 @@
 import * as http from 'http';
 import * as express from 'express';
+import * as sourceMapSupport from 'source-map-support';
 import app from "lib/core/app";
 
-// declare function require(name: string);
-// tslint:disable-next-line:no-var-requires
-// tslint:disable-next-line:no-var-requires
-require('source-map-support').install();
+sourceMapSupport.install();
 
 const router = express.Router({
   mergeParams: true,
