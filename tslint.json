@@ -16,22 +16,14 @@
         "allowSingleLine": true
       }
     ],
-    "array-bracket-spacing": [
-      true,
-      "never"
-    ], 
     "object-curly-spacing": [
       true,
       "always"
-    ], 
+    ],
     "space-in-parens": [true, "never"],
-    "array-bracket-spacing": [
-      true,
-      "never"
-    ], 
     "variable-name": [
       true,
-      "check-format" 
+      "check-format"
     ],
 
     "typedef": [false],
