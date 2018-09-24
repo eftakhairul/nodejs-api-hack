@@ -1,7 +1,7 @@
 import * as http from 'http';
 import * as express from 'express';
 import * as sourceMapSupport from 'source-map-support';
-import app from "lib/core/app";
+import app from "./lib/core/app";
 
 sourceMapSupport.install();
 

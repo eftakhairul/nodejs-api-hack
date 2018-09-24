@@ -17,9 +17,9 @@
       "baseUrl": "./src",
       "paths": {
           "*": [
+              "*",
               "../node_modules/*",
               "../config/*",
-              "*",
               "types/*"
           ]
       },
