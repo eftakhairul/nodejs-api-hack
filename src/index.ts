@@ -1,8 +1,6 @@
-import * as http  from 'http';
+import * as http from 'http';
 import * as express from 'express';
-import {Request, Response} from "express";
 import app from "lib/core/app";
-
 
 // declare function require(name: string);
 // tslint:disable-next-line:no-var-requires
@@ -13,12 +11,11 @@ const router = express.Router({
   mergeParams: true,
 });
 
-router.use('/sys/health', (request: Request, response: Response) => {
+router.use('/sys/health', (request: express.Request, response: express.Response) => {
   response.status(200);
   response.set('Content-Type', 'application/json');
-  response.send({ "ok": true });
+  response.send({ 'okay': true });
 });
-
 
 app.use(router);
 
@@ -38,8 +35,8 @@ const server = http.createServer(app);
  */
 server.listen(port);
 server.on('listening', () => {
-  const addr = server.address();
-  const bind = typeof addr === 'string'? 'pipe ' + addr : 'port ' + addr.port;
+  const address = server.address();
+  const bind = typeof address === 'string' ? `pipe ${address}` : `port: ${address.port}`;
 
   process.stdout.write(`API server Up and Running on ${bind} \n`);
 });
