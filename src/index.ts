@@ -1,7 +1,7 @@
 import * as http  from 'http';
 import * as express from 'express';
 import {Request, Response} from "express";
-import { App } from "lib/core/App";
+import app from "lib/core/app";
 
 
 // declare function require(name: string);
@@ -20,18 +20,18 @@ router.use('/sys/health', (request: Request, response: Response) => {
 });
 
 
-App.use(router);
+app.use(router);
 
 /**
  * Setting up port
  */
 const port: number = parseInt(process.env.NODE_PORT as string, 10) || 3000;
-App.set('port', port);
+app.set('port', port);
 
 /**
  * Create HTTP server.
  */
-const server = http.createServer(App);
+const server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.

@@ -1,11 +1,10 @@
 import * as express from 'express';
-import { Express } from "express";
 import * as bodyParser from 'body-parser';
 import * as helmet from 'helmet';
 import * as cors from 'cors';
-import  { db } from 'lib/models/index';
+//import  { db } from 'lib/models/index';
 
-const app: Express = express();
+const app: express.Express = express();
 
 /**
  * Decode payload as json with body-parser
@@ -16,7 +15,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(helmet({
   frameguard: false,
 }));
-
 
 const env: string = app.get('env');
 if (['development', 'test', 'staging'].indexOf(env) !== -1) {
@@ -38,6 +36,6 @@ app.use(cors());
 /**
  * Setting up DB
  */
-app.set('db', db);
+//app.set('db', db);
 
-export const App: Express = app;
+export default app;
