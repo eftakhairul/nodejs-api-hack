@@ -7,7 +7,9 @@ import  { db } from 'lib/models/index';
 
 const app: Express = express();
 
-// Decode payload as json with body-parser
+/**
+ * Decode payload as json with body-parser
+ */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -23,13 +25,19 @@ if (['development', 'test', 'staging'].indexOf(env) !== -1) {
   app.set('json spaces', 0);
 }
 
-// Trust the first proxy which should be an AWS ELB
+/**
+ * Trust the first proxy which should be an AWS ELB
+ */
 app.set('trust proxy', true);
 
-//Set cors
+/**
+ * Setting up cors
+ */
 app.use(cors());
 
-//Set DB 
+/**
+ * Setting up DB
+ */
 app.set('db', db);
 
 export const App: Express = app;
