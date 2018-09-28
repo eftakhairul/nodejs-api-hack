@@ -1,2 +1,2 @@
-# nodejs-api-hack
-A scaffolding nodejs app with TypeScript, tslint and eslint
+# ts-api-hack
+A scaffolding nodejs app for REST api with TypeScript, tslint and eslint
